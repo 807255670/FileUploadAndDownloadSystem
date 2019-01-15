@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hodor.dao.IClassDao" >    
+    <select id = "selectByName" parameterType="string" resultType="com.hodor.dto.Class">
+    	select * from classes where classname = #{classname}
+    </select>
+    
+    <select id = "selectById" parameterType="int" resultType="com.hodor.dto.Class">
+    	select * from classes where id = #{id}
+    </select>
+    <select id = "selectAll" resultType="com.hodor.dto.Class">
+        select * from classes
+    </select>
+    <insert id="addClassByName" parameterType="string">
+    	insert into classes(classname) values(#{classname}) 
+    </insert>
+</mapper>  
